@@ -115,7 +115,7 @@ function setIndexContent() {
             let div = document.createElement("div");
             let a = document.createElement("a");
             a.setAttribute('class', v[2]);
-            a.setAttribute('onclick', 'location.href="./index.html?page=' + k + '";');
+            a.setAttribute('onclick', 'location.href=".?page=' + k + '";');
             div.append(a);
             elem.append(div);
             let h2 = document.createElement('h2');
