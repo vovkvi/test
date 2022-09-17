@@ -19,7 +19,7 @@ $(document).ready(() => {
 	var currentYear = new Date().getFullYear();
 	$('.footer').html('&copy; Vitalii Vovk, ' + ((currentYear===2022) ? '2022' : '2022 - ' + currentYear));
 
-	$.getScript('https://vovkvi.github.io/exam/src/js/config.js', () => {
+	$.getScript('./src/js/config.js', () => {
 	
 		var style = document.createElement('link');
     	style.href = (pg != undefined) ? './src/css/content.css' : './src/css/index.css';
@@ -140,7 +140,7 @@ function getCard(){
        		}
     	});
    	});
-	getScripts(jsUrls, 'https://vovkvi.github.io/exam/src/js/', () => {
+	getScripts(jsUrls, './src/js/', () => {
    		$('title').text('ExaM. ' + ttl);
    		$('#chapter-id').text(ttl);
     	$('.active-chapter-icon').attr('class', icn + ' active-chapter-icon');
