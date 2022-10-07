@@ -1,21 +1,6 @@
 var pg = getUrlParam('page', undefined);
 
 $(document).ready(() => {
-	Hyphenopoly.config({
-    	require: {
-        	"ru": "восьмидесятивосьмимиллиметровое"
-    	},
-    	paths: {
-        	patterndir: "./src/third-party/hyphenopoly/patterns/",
-        	maindir: "./src/third-party/hyphenopoly/"
-   		},
-    	setup: {
-        	selectors: {
-            	".content": {}
-        	}
-    	}
-	});
-
 	var currentYear = new Date().getFullYear();
 	$('.footer').html('&copy; Vitalii Vovk, ' + ((currentYear===2022) ? '2022' : '2022 - ' + currentYear));
 
@@ -43,6 +28,21 @@ $(document).ready(() => {
 			setIndexContent();
 		}
 	});
+    Hyphenopoly.config({
+        require: {
+            "ru": "восьмидесятивосьмимиллиметровое",
+            "en-us": "Supercalifragilisticexpialidocious"
+        },
+        paths: {
+            patterndir: "./src/third-party/hyphenopoly/patterns/",
+            maindir: "./src/third-party/hyphenopoly/"
+        },
+        setup: {
+            selectors: {
+                ".content": {}
+            }
+        }
+    });
 });
 
 function getScripts(scripts, path, callback) {
