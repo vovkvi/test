@@ -68,8 +68,8 @@ function showAnsw() {
 	$('details').attr('open', (document.getElementById('show-answ').checked) ? true : false);
 }
 function changeTheme() {
-	var isNight = $('#change-theme').prop('checked');
-	var bg = (isNight) ? '#000' : 'var(--background)';
+    var isNight = $('#change-theme').prop('checked');
+    var bg = (isNight) ? '#000' : 'var(--background)';
     var dt = (isNight) ? 'var(--black)' : 'var(--white)';
     var sum = (isNight) ? '#fff' : '#000';
     var an = (isNight) ? 'var(--color-akcent)' : 'var(--answer-color)';
@@ -102,28 +102,32 @@ function setIndexContent() {
     $('main.content').append('\
         <div id="center">\
             <div id="tbl">\
-                <div class="row">\
-                </div>\
+                <div class="row"></div>\
             </div>\
         </div>');
     $.each(pages, (i) => {
-        let col = document.createElement("div");
-        col.setAttribute('class', 'col');
+        let col = Object.assign(document.createElement("div"),{
+            className: 'col'
+        });
         $.each(pages[i], (k,v) => {
-            let elem = document.createElement("div");
-            elem.setAttribute('class', 'elem');
+            let elem = Object.assign(document.createElement("div"),{
+                className: 'elem'
+            });
             let div = document.createElement("div");
-            let a = document.createElement("a");
-            a.setAttribute('class', v[2]);
+            let a = Object.assign(document.createElement("a"),{
+                className: v[2]
+            });
             a.setAttribute('onclick', 'location.href=".?page=' + k + '";');
             div.append(a);
-            elem.append(div);
-            let h2 = document.createElement('h2');
-            h2.innerHTML = v[0];
-            elem.append(h2);
-            let p = document.createElement('p');
-            p.innerHTML = v[1];
-            elem.append(p);
+            elem.append(
+                div,
+                Object.assign(document.createElement("h2"),{
+                    innerHTML: v[0]
+                }),
+                Object.assign(document.createElement("p"),{
+                    innerHTML: v[1]
+                })
+            );
             col.append(elem);
         });
         $('div.row').append(col);
@@ -131,50 +135,54 @@ function setIndexContent() {
 }
 function getCard(){
 	currentCard = parseInt($('body').attr('card'));
-   	$.each(pages, (i) => {
-   		$.each(pages[i], (k,v) => {
-       	  	if (k === pg) {
-           	   	ttl = v[0];
-           		icn = v[2];
-           		jsUrls = v[3];
-       		}
-    	});
-   	});
+    var ch = pages.find(e => e[pg])[pg];
+    var ttl = ch[0];
+    $('#chapter-id').text(ttl);
+    $('title').text('ExaM. ' + ttl);
+    $('.active-chapter-icon').attr('class', ch[2] + ' active-chapter-icon');
+    var jsUrls = ch[3];
 	getScripts(jsUrls, './src/js/', () => {
-   		$('title').text('ExaM. ' + ttl);
-   		$('#chapter-id').text(ttl);
-    	$('.active-chapter-icon').attr('class', icn + ' active-chapter-icon');
    		$('li > a').attr('class', '');
    		$('main.content').empty();
 		if (parseInt($('body').attr('count')) === 0) {
        		countCard = DataQ.length -1;
        		$('body').attr('count', countCard);
    		}
-   		$('main.content').append('<div class="card-hdr">\
-       	    <h2 id="title">' + ttl + '</h2>\
-       		<h2 id="card">' + (currentCard + 1) + '&nbsp;из&nbsp;' + (countCard+1) + '</h2>\
-       		</div>'
-       		);
+   		let div = Object.assign(document.createElement("div"),{
+            className:'card-hdr'
+        });
+        div.append(
+            Object.assign(document.createElement("h2"),{
+                id: 'title',
+                innerHTML: ttl
+            }),
+            Object.assign(document.createElement("h2"),{
+                id: 'card',
+                innerHTML: (currentCard+1) + '&nbsp;из&nbsp;' + (countCard+1)
+            })
+        );
+        $('main.content').append(div);
     	$.each(DataQ[currentCard], (q) => {
-        	question = DataQ[currentCard][q];;
-        	let details = document.createElement("details");
-        	let summary = document.createElement("summary");
-        	summary.setAttribute('lang', 'ru');    
-        	summary.innerHTML = question['q'];
-        	let span = document.createElement("span");
-        	span.setAttribute('class', 'ntd');
-        	span.setAttribute('lang', 'ru');
-        	span.innerHTML = '<br>' + question['n'];
-        	summary.append(span);
-        	details.append(summary);
-        	let p = document.createElement('p');
-        	p.setAttribute('lang', 'ru');
-        	p.innerHTML = (DataA.length === 0) ? question['a'] : DataA[question['a']];
-        	let div = document.createElement('div');
-        	div.setAttribute('class', 'answer');
-        	div.append(p);
-        	details.append(div);
-        	$('main.content').append(details);
+            question = DataQ[currentCard][q];
+            let summary = Object.assign(document.createElement("summary"),{
+                lang: 'ru',
+                innerHTML: question['q']
+            });
+            summary.append(Object.assign(document.createElement("span"),{
+                className: 'ntd',
+                lang: 'ru',
+                innerHTML: '<br>' + question['n']
+            }));
+            let div = Object.assign(document.createElement('div'), {
+                className: 'answer'
+            });
+            div.append(Object.assign(document.createElement('p'), {
+                lang: 'ru',
+                innerHTML: (DataA.length === 0) ? question['a'] : DataA[question['a']]
+            }));
+            let details = document.createElement("details");
+            details.append(summary, div);
+            $('main.content').append(details);
     	});
     	window.scrollTo(0, 0);
     	showAnsw();
