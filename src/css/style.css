@@ -64,7 +64,7 @@ body[dark="1"] {
 }
 .wrapper{
 	background: var(--doc-bgrnd);
-	padding-top: 32px;
+	padding-top: 10px;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
