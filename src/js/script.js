@@ -94,8 +94,8 @@ function showIndexPage() {
     $('div.content').empty();
     $('title').text('EXAM. Самоподготовка.');
     $('.active-chapter>svg>use').attr('xlink:href','#ri-home-2-fill');
-    renderTable(qcard,'tbl-card','Электрический цех<br><br>Экзаменационные билеты для аттестации в ПДК ТЭЦ-14');
-    renderTable(qtest,'tbl-test','<br>Контрольные вопросы и прочие документы');
+    renderTable(qcard,'tbl-card','Экзаменационные билеты для аттестации в ПДК ТЭЦ-14<br><br>');
+    renderTable(qtest,'tbl-test','<br>Контрольные вопросы и прочие документы<br><br>');
     changeTheme();
 }
 function nextCard() {
@@ -166,7 +166,7 @@ function getCard(){
             details.append(summary, div);
             $('div.content').append(details);
         });
-        window.scrollTo(0, 0);
+        window.scrollTo(0,0);
         showAnswers();
         changeTheme();
     });
