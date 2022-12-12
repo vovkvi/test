@@ -89,6 +89,7 @@ function renderTable(table, id, title) {
     });
 }
 function showIndexPage() {
+    $('.wrapper').css('padding-top','4px');
     $('label.no-index').css('display','none');
     $('div.content').empty();
     $('title').text('EXAM. Самоподготовка.');
@@ -111,6 +112,7 @@ function showChapter(chapter) {
     getCard();
 }
 function getCard(){
+    $('.wrapper').css('padding-top','32px');
     $('label.no-index').css('display', 'unset');
     currentCard = parseInt($('body').attr('card'));
     var tmp = qcard.find(e => e[pg]);
