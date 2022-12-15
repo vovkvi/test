@@ -15,9 +15,6 @@ $(document).ready(() => {
             }
         }
     });
-    $('#screen>input').on('click', fullScreen);
-    $('#answer>input').on('click', showAnswers);
-    $('#theme>input').on('click', changeTheme);
     $('.footer').html('&copy; Vitalii Vovk, ' + new Date().getFullYear());
     $.getScript('./src/js/config.js', () => {
         if (pg != undefined) {
@@ -35,15 +32,15 @@ $(document).ready(() => {
                     <div class="empty-space"></div>\
                     <label class="switch" id="answer">\
                         <svg class="ri-icn"><use xlink:href="#ri-eye-fill"></use></svg>\
-                        <input class="slider" type="checkbox">\
+                        <input class="slider" type="checkbox" onclick="showAnswers();">\
                     </label>\
                     <label class="switch" id="theme">\
                         <svg class="ri-icn"><use xlink:href="#ri-moon-fill"></use></svg>\
-                        <input class="slider" type="checkbox">\
+                        <input class="slider" type="checkbox" onclick="changeTheme();">\
                     </label>\
                     <label class="switch" id="screen">\
 			<svg class="ri-icn"><use xlink:href="#ri-fullscreen-fill"></use></svg>\
-			<input class="slider" type="checkbox">\
+			<input class="slider" type="checkbox" onclick="fullScreen();">\
 		    </label>\
                 </div>'
             );
