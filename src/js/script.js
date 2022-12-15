@@ -42,9 +42,9 @@ $(document).ready(() => {
                         <input class="slider" type="checkbox">\
                     </label>\
                     <label class="switch" id="screen">\
-				        <svg class="ri-icn"><use xlink:href="#ri-fullscreen-fill"></use></svg>\
-				        <input class="slider" type="checkbox">\	
-			        </label>\
+			<svg class="ri-icn"><use xlink:href="#ri-fullscreen-fill"></use></svg>\
+			<input class="slider" type="checkbox">\
+		    </label>\
                 </div>'
             );
             getCard();
