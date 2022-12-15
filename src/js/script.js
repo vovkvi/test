@@ -113,8 +113,8 @@ function showIndexPage() {
     $('div.content').empty();
     $('title').text('EXAM. Самоподготовка.');
     $('.active-chapter>svg>use').attr('xlink:href','#ri-home-2-fill');
-    renderTable(qcard,'tbl-card','Билеты для сдачи экзамена в ПДК ТЭЦ-14<br><br>');
-    renderTable(qtest,'tbl-test','<br>Контрольные вопросы и прочие документы<br><br>');
+    renderTable(qcard,'tbl-card','Билеты для подготовки к экзамену в ПДК ТЭЦ-14<br><br>');
+    renderTable(qtest,'tbl-test','<br>Контрольные вопросы и инструкции<br><br>');
     changeTheme();
 }
 function nextCard() {
