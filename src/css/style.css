@@ -62,9 +62,27 @@ body[dark="1"] {
 	--card-ntd-color  : var(--white);
 	--card-answ-color : var(--btn-outline);
 }
+.old-browser,
+.old-browser p,
+.old-browser td {
+	text-align: center;
+	padding: 10px;
+	color: black;
+}
+.old-browser h2 {
+	margin: 20px;
+}
+.old-browser table {
+	padding-top: 1.5em;
+	margin: 0 auto;
+}
+.old-browser img {
+	width: 64px;
+	height: 64px;
+}
 .wrapper{
 	background: var(--doc-bgrnd);
-	padding-top: 10px;
+	padding-top: 32px;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -152,6 +170,10 @@ body[dark="1"] {
 	margin: 0 auto;
 	padding: 30px 10px 30px 10px;
 	width: 100%;
+	hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
 }
 /**************************************************
  *   3. Footer
