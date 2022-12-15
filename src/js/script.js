@@ -160,7 +160,7 @@ function getCard(){
             });
             div.append(Object.assign(document.createElement('p'), {
                 lang: 'ru',
-                innerHTML: (DataA.length === 0) ? question['a'] : DataA[question['a']]
+                innerHTML: (Object.keys(DtA).length === 0) ? question['a'] : DataA[question['a']]
             }));
             let details = document.createElement("details");
             details.append(summary, div);
