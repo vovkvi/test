@@ -3,8 +3,7 @@ var pg = getUrlParam('page', undefined);
 $(document).ready(() => {
     Hyphenopoly.config({
         require: {
-            "ru": "восьмидесятивосьмимиллиметровое",
-            "en-us": "Supercalifragilisticexpialidocious"
+            "ru": "электротехнологический"
         },
         paths: {
             patterndir: "./src/libs/hyphenopoly/patterns/",
