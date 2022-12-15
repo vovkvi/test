@@ -193,3 +193,11 @@ function getCard(){
         changeTheme();
     });
 }
+function fullScreen() {
+    $('#screen>svg>use').attr('xlink:href',$('#screen>input').prop('checked')?'#ri-fullscreen-exit-fill':'#ri-fullscreen-fill');
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+}
