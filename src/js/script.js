@@ -32,12 +32,16 @@ $(document).ready(() => {
                     <div class="empty-space"></div>\
                     <label class="switch" id="answer">\
                         <svg class="ri-icn"><use xlink:href="#ri-eye-fill"></use></svg>\
-                        <input class="slider" type="checkbox" onclick="showAnswers();">\
+                        <input class="slider" type="checkbox">\
                     </label>\
                     <label class="switch" id="theme">\
                         <svg class="ri-icn"><use xlink:href="#ri-moon-fill"></use></svg>\
-                        <input class="slider" type="checkbox" onclick="changeTheme();">\
+                        <input class="slider" type="checkbox">\
                     </label>\
+                    <label class="switch" id="screen">\
+				        <svg class="ri-icn"><use xlink:href="#ri-fullscreen-fill"></use></svg>\
+				        <input class="slider" type="checkbox">\	
+			        </label>\
                 </div>'
             );
             getCard();
