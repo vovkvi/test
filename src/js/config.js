@@ -1,7 +1,7 @@
 const qcard = [
     {
         "ot" : ["ОТ","Охрана труда","#ri-alarm-warning-fill",['ot.js']],
-        "eb2" : ["ЭБ-II","Электробезопасность</br>(группа II)","#ri-flashlight-fill",['eb2.js']],
+        "eb2" : ["ЭБ-II","Электробезопасность</br>(группа II)","#ri-flashlight-fill",['eb2.js','eb.js']],
         "pte" : ["ПТЭ (ИТР)","Техническая эксплуатация</br>(инженерно-технические работники)","#ri-tools-fill",['pte.js']]
     },
     {
