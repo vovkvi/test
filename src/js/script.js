@@ -15,6 +15,9 @@ $(document).ready(() => {
             }
         }
     });
+    $('#screen>input').on('click', fullScreen);
+    $('#answer>input').on('click', showAnswers);
+    $('#theme>input').on('click', changeTheme);
     $('.footer').html('&copy; Vitalii Vovk, ' + new Date().getFullYear());
     $.getScript('./src/js/config.js', () => {
         if (pg != undefined) {
