@@ -118,11 +118,11 @@ function showIndexPage() {
     changeTheme();
 }
 function nextCard() {
-    $('body').attr('card', parseInt($('body').attr('card')) + 1);
+    $('body').attr('card', (currentCard < countCard) ? currentCard + 1 : countCard);
     getCard();
 }
 function prevCard() {
-    $('body').attr('card', parseInt($('body').attr('card')) - 1);
+    $('body').attr('card', (currentCard >= 1) ? currentCard - 1 : 0);
     getCard(); 
 }
 function showChapter(chapter) {
