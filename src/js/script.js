@@ -1,20 +1,21 @@
 var pg = getUrlParam('page', undefined);
-Hyphenopoly.config({
-    require: {
-        "ru": "восьмидесятивосьмимиллиметровое",
-        "en-us": "Supercalifragilisticexpialidocious"
-    },
-    paths: {
-        patterndir: "./src/libs/hyphenopoly/patterns/",
-        maindir: "./src/libs/hyphenopoly/"
-    },
-    setup: {
-        selectors: {
-            ".content": {}
-        }
-    }
-});
+
 $(document).ready(() => {
+    Hyphenopoly.config({
+        require: {
+            "ru": "восьмидесятивосьмимиллиметровое",
+            "en-us": "Supercalifragilisticexpialidocious"
+        },
+        paths: {
+            patterndir: "./src/libs/hyphenopoly/patterns/",
+            maindir: "./src/libs/hyphenopoly/"
+        },
+        setup: {
+            selectors: {
+                ".content": {}
+            }
+        }
+    });
     $('.footer').html('&copy; Vitalii Vovk, ' + new Date().getFullYear());
     $.getScript('./src/js/config.js', () => {
         if (pg != undefined) {
